@@ -7,6 +7,5 @@
     %th introduction
     %th= user.introduction
 .row
-  - if @user.id == current_user.id
-    = link_to '',edit_user_path(id:user.id), class:"col-xs-12 btn btn-default glyphicon glyphicon-wrench btn btn-default"
+  = link_to '',edit_user_path(id:user.id), class:"col-xs-12 btn btn-default glyphicon glyphicon-wrench btn btn-default"
 

@@ -1,0 +1,19 @@
+= form_for(book) do |f|
+  - if book.errors.any?
+    %h3
+      = book.errors.count
+      error occurrence
+    / エラーメッセ
+    %ul
+      - book.errors.full_messages.each do |message|
+        %li= message
+  .field.row
+    = f.label :title
+    = f.text_field :title, class: "col-xs-12 book_title"
+  .field.row
+    = f.label :Opinion
+    / ここを変更
+    = f.text_area :body, class: "col-xs-12 book_body"
+  .actions.row
+    = f.submit class: "btn btn-info col-xs-12"
+
