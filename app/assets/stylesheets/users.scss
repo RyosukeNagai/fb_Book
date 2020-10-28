@@ -1,0 +1,33 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//showページ
+.no-image {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+}
+//editページ
+.information {
+	width: 500px;
+	height: auto;
+	margin: 0 auto;
+}
+.field-info {
+	margin-top: 15px;
+}
+.name {
+	margin-left: 13%;
+	height: 40px;
+}
+.introduction {
+	margin-left: 5%;
+	width: 250px;
+	height: 100px;
+}
+
+.img_prev:hover {
+  cursor: pointer; 
+  opacity: 0.7;
+  transform: scale(1.01, 1.01);
+}
