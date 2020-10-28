@@ -1,0 +1,9 @@
+.container
+  .row
+    .col-xs-3
+      %h2 User info
+      = render 'users/profile', user: @user
+      / 同コントローラーのviewで表示ならusersは省略可
+      %h2 New book
+    .col-xs-9
+      %h2 Books

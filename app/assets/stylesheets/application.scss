@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.container span {
+	color: #fff;
+	font-size: 35px;
+}
+body {
+	margin-top: 80px;
+	font-family: 'Acme', sans-serif;
+}

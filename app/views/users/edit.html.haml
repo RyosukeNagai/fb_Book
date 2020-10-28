@@ -1,0 +1,24 @@
+.information
+  %h2 User info
+  = form_for(@user) do |f|
+    / エラーメッセージ表示
+    - if @user.errors.any?
+      %h3
+        = @user.errors.count
+        error occurrence
+      / エラーメッセ
+      %ul
+        - @user.errors.full_messages.each do |message|
+          %li= message
+    / エラーメッセージ表示
+    .field-info
+      = f.label :name
+      = f.text_field :name, class: "name"
+    .field-info
+      = f.file_field :profile_image, class: 'img_field', style: 'display:none;'
+      = attachment_image_tag @user, :profile_image, fallback: 'no-image.png', onClick: "$('.img_field').click()", class: 'center-block img-thumbnail img-responsive img_prev'
+    .field-info
+      = f.label :introduction
+      = f.text_area :introduction, class: "introduction"
+    .actions
+      = f.submit "Update User", class: "btn btn-warning"
