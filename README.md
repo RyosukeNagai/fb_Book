@@ -1,5 +1,6 @@
 # README
-スクリーンショット 2020-11-01 23.32.19
+![image](https://user-images.githubusercontent.com/64464083/97805617-8bbea300-1c9a-11eb-92be-1d23894692fd.png)
+
 
 # このアプリについて
  - お気に入りの本紹介サイト
