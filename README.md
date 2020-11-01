@@ -1,24 +1,79 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# このアプリについて
+ - お気に入りの本紹介サイト
+ - フォロー機能
+ - 検索機能
+ - PV数取得
+ - Hamlの導入
+ - 使用Gem
 
-Things you may want to cover:
+# Gem/ver
+* Ruby:2.5.7
 
-* Ruby version
+* Rails:'~> 5.2.4', '>= 5.2.4.4'
 
 * System dependencies
+ - gem 'devise'
+ - gem 'haml_rails'
+ - gem 'font-awesome-sass'
+ - gem 'bootstrap-sass', '~> 3.3.6'
+ - gem 'refile'
+ - gem 'refile-mini_magick'
+ - gem 'jquery-rails'
+ - gem 'kaminari','~> 1.2.1'
+ - gem 'impressionist', '~>1.6.1'
 
-* Configuration
+## usersテーブル
+|Column|Type|
+|------|----|
+|name|string|
+|email|string|
+|password|string|
+|profile_image_id|string|
+|introduction|text|
+|impressions_count|integer|
 
-* Database creation
+### Association
+ -has_many: book<br>
+ -has_many :reviews, dependent: :destroy
 
-* Database initialization
+## bookテーブル
+|Column|Type|
+|------|----|
+|title|string|
+|body|text|
+|user_id|integer|
 
-* How to run the test suite
+### Association
+ -belongs_to: user<br>
+ -has_many :reviews, dependent: :destroy
 
-* Services (job queues, cache servers, search engines, etc.)
+## relationshipテーブル
+|Column|Type|
+|------|----|
+|follower_id|integer|
+|followed_id|integer|
 
-* Deployment instructions
+### Association
+ -belongs_to :follower, class_name: "User"
+ -belongs_to :followed, class_name: "User"
 
-* ...
+## impressionsテーブル
+|Column|Type|
+|------|----|
+|impressionable_type|string|
+|impressionable_id|integer|
+|user_id|integer|
+|controller_name|string|
+|action_name|string|
+|view_name|string|
+|request_hash|string|
+|ip_address|string|
+|session_hash|string|
+|message|t.text|
+|referrer|t.text|
+|params|t.text|
+
+
+
