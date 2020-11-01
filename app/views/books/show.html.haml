@@ -18,8 +18,9 @@
               = attachment_image_tag(@book.user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg")
               %br/
               = @book.user.name
-          %td= link_to @book.title, @book
+          %td= link_to @book.title
           %td= @book.body
+
           - if @book.user == current_user
             %td= link_to "Edit",edit_book_path(@book), class: "btn-sm btn-success edit_book_#{@book.id}"
             %td= link_to "Destroy",book_path(@book), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_book"

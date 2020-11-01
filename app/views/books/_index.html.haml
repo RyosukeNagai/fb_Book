@@ -4,6 +4,7 @@
       %th
       %th Title
       %th Opinion
+      %th Review
       %th{:colspan => "3"}
   %tbody
     - books.each do |book|
@@ -13,3 +14,13 @@
             = attachment_image_tag(book.user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg")
         %td= link_to book.title, book_path(book), class: "book_#{book.id}"
         %td= book.body
+        %td
+          .card-content
+            .content.average-score
+              .star-rating.mb-2
+                .star-rating-front{:style => "width:"} ★★★★★
+                .star-rating-back ★★★★★
+              .average-score-display.ml-3.pt-2
+                点（#{@book.reviews.count}件のレビュー）
+            = link_to "レビューを見る", book_reviews_path(book), style: "font-size: 12px;"
+

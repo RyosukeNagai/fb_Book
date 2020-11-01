@@ -1,0 +1,79 @@
+// Place all the styles related to the reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.rating-box .ratings .fa{
+  font-size: 30px;
+  color:#ffcc00;
+  cursor: pointer;
+}
+
+.main-rating {
+  display: flex;
+}
+
+.rating-value-display {
+  font-size: 20px;
+}
+
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+  font-size: 16px;
+}
+.star-rating-back {
+  color: #ccc;
+  font-size: 16px;
+}
+
+.average-score {
+  display: flex;
+}
+.average-score-display {
+  font-size: 12px;
+}
+.card-headers {
+	width: 500px;
+	margin-top: 50px;
+	margin-left: 42%;
+}
+.card-header-titles {
+	font-size: 25px;
+}
+.card-contents {
+	width: 500px;
+	margin-left: 42%;
+	margin-top: 10px;
+}
+.review {
+	width: 500px;
+	margin-left: 42%;
+	margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

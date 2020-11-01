@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
   before_action :authenticate_user! , only: [:show, :edit, :index]
   before_action :baria_user, only: [:update]
+  impressionist :actions => [:show], :unique => [:impressionable_id, :ip_address]
   def index
     @users = User.all #一覧表示するためにUserモデルのデータを全て変数に入れて取り出す。
     @book = Book.new 
   end
 
   def show
-  	@user = User.find(params[:id])
+    @user = User.find(params[:id])
+    @views = @user.impressions.size
     @books = @user.books
     @book = Book.new #new 
   end
