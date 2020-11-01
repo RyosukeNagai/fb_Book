@@ -6,7 +6,6 @@ before_action :authenticate_user! , only: [:show, :edit, :index]
     @book = Book.find(params[:id])
     @book_new = Book.new
     @user = User.find(@book.user_id)
-
   end
 
   def index

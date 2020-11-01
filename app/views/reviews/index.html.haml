@@ -1,0 +1,29 @@
+%body
+  %section.section.mt-6
+    .container
+      .columns.is-centered
+        .column.is-5
+          .card.mb-6
+            %header.card-header
+              %p.card-header-title
+                = @book.title
+            .card-content
+              .content.average-score
+                .star-rating.mb-2
+                  .star-rating-front{:style => "width: "} ★★★★★
+                  .star-rating-back ★★★★★
+                .average-score-display.ml-3.pt-2
+                  点（#{@book.reviews.count}件のレビュー）
+          %table.table.is-fullwidth.has-text-centered
+            %thead
+              %tr
+                %th ユーザー
+                %th 点数
+                %th 内容
+            %tbody
+              - @reviews.each do |review|
+                %tr
+                  %td= review.user.username
+                  %td= review.score
+                  %td= review.content
+= render 'form',book:@book, review:@review

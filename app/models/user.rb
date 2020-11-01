@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  is_impressionable counter_cache: true
   has_many :books, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   attachment :profile_image
   
   # 自分がフォローされる（被フォロー）側の関係性

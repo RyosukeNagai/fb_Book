@@ -35,3 +35,8 @@ $(function () {
   });
 });
 })
+
+// class = "ratings"の子要素を取得
+const stars = document.querySelector(".ratings").children;
+
+
