@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#top'
   get 'home/about'
-  resources :users,only: [:show,:index,:edit,:update] do
-  	resource :relationships, only: [:create, :destroy]
+  resources :users, only: [:show, :index, :edit, :update] do
+    resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
     get 'followers' => 'relationships#followers', as: 'followers'
   end
-  resources :books,only: [:index,:create,:show,:edit,:update,:destroy] do 
+  resources :books, only: [:index, :create, :show, :edit, :update, :destroy] do
     resources :reviews, only: [:index, :create]
   end
   get '/search', to: 'search#search'

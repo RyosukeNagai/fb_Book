@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :reviews, dependent: :destroy
   attachment :profile_image
-  
+
   # 自分がフォローされる（被フォロー）側の関係性
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   # 自分がフォローする（与フォロー）側の関係性
@@ -30,8 +30,8 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
-  validates :name, length: {maximum: 20, minimum: 2}
-  validates :introduction, length: {maximum: 50,}
+  validates :name, length: { maximum: 20, minimum: 2 }
+  validates :introduction, length: { maximum: 50 }
 
   def self.search_for(content, method)
     if method == 'perfect'

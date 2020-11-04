@@ -1,7 +1,5 @@
 # README
 ![image](https://user-images.githubusercontent.com/64464083/97805617-8bbea300-1c9a-11eb-92be-1d23894692fd.png)
-
-
 # このアプリについて
  - お気に入りの本紹介サイト
  - フォロー機能
@@ -25,6 +23,7 @@
  - gem 'jquery-rails'
  - gem 'kaminari','~> 1.2.1'
  - gem 'impressionist', '~>1.6.1'
+ - gem 'rubocop-airbnb'
 
 ## usersテーブル
 |Column|Type|

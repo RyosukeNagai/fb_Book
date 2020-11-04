@@ -1,37 +1,37 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user! , only: [:show, :edit, :index]
+  before_action :authenticate_user!, only: [:show, :edit, :index]
   before_action :baria_user, only: [:update]
   impressionist :actions => [:show], :unique => [:impressionable_id, :ip_address]
   def index
-    @users = User.all #一覧表示するためにUserモデルのデータを全て変数に入れて取り出す。
-    @book = Book.new 
+    @users = User.all # 一覧表示するためにUserモデルのデータを全て変数に入れて取り出す。
+    @book = Book.new
   end
 
   def show
     @user = User.find(params[:id])
     @views = @user.impressions.size
     @books = @user.books
-    @book = Book.new #new 
+    @book = Book.new # new
   end
 
   def edit
-  	@user = User.find(params[:id])
-  	redirect_to user_path(current_user) unless @user.id == current_user.id
+    @user = User.find(params[:id])
+    redirect_to user_path(current_user) unless @user.id == current_user.id
   end
 
   def update
-  	@user = User.find(params[:id])
-  	if @user.update(user_params)
-  		redirect_to user_path(@user), notice: "successfully updated user!"
-  	else
-  		render "edit"
-  	end
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user), notice: "successfully updated user!"
+    else
+      render "edit"
+    end
   end
 
-private
-  
+  private
+
   def user_params
-  	params.require(:user).permit(:name, :introduction, :profile_image)
+    params.require(:user).permit(:name, :introduction, :profile_image)
   end
 
   def baria_user
@@ -39,6 +39,4 @@ private
       redirect_to user_path(current_user)
     end
   end
-
-
 end

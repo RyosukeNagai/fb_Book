@@ -1,8 +1,9 @@
 class ReviewsController < ApplicationController
   def index
-  	@book = Book.find(params[:book_id])
+    @book = Book.find(params[:book_id])
     @reviews = @book.reviews
   end
+
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
@@ -15,8 +16,8 @@ class ReviewsController < ApplicationController
   end
 
   private
+
   def review_params
     params.require(:review).permit(:book_id, :score, :content)
   end
 end
-
